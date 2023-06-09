@@ -63,12 +63,26 @@ def find(arr, n):
     return arr[n]
 
 # <DFS/BFS>
-def dfs():
-    print()
+def dfs(graph, visited, start):
+    stack = [graph[start]]
+    visited[start] = True
+    cnt = 0
+    
+    while stack:
+        neighbors = stack.pop()
+        cnt += 1
+        
+        for n in neighbors:
+            if not visited[n]:
+                stack.append(graph[n])
+                visited[n] = True
+    return cnt
     
 def solution(n, wires):
+    INF = float("inf")
+    
     # 유니온 파인드를 사용한 풀이
-    answer1 = float("inf")
+    answer1 = INF
     for i in range(n - 1):
         arr = [j for j in range(n + 1)]
         for k, wire in enumerate(wires):
@@ -84,9 +98,24 @@ def solution(n, wires):
                 cnt[root] = 1
         tmp = list(cnt.values())
         answer1 = min(answer1, abs(tmp[0] - tmp[1]))
-    return answer1
+
     # dfs/bfs를 사용한 풀이
-#     answer2 = 0
+    answer2 = INF
+    graph = [[] for _ in range(n + 1)]
+    for n1, n2 in wires:
+        graph[n1].append(n2)
+        graph[n2].append(n1)
     
-    
-#     return answer1 if answer1 == answer2 else -1
+    for n1, n2 in wires:
+        graph[n1].remove(n2)
+        graph[n2].remove(n1)
+        tmp = []
+        visited = [False] * (n + 1)
+        for i in range(1, n + 1):
+            if not visited[i]:
+                tmp.append(dfs(graph, visited, i))
+        answer2 = min(answer2, abs(tmp[0] - tmp[1]))
+        graph[n1].append(n2)
+        graph[n2].append(n1)
+        
+    return answer1 if answer1 == answer2 else -1
