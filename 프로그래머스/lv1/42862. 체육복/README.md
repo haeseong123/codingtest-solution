@@ -1,10 +1,10 @@
 # [level 1] 체육복 - 42862 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42862) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42862?language=javascript) 
 
 ### 성능 요약
 
-메모리: 10.4 MB, 시간: 0.01 ms
+메모리: 33.5 MB, 시간: 0.11 ms
 
 ### 구분
 
@@ -75,7 +75,8 @@ Empty
 ※ 공지 - 2019년 2월 27일, 28일 테스트케이스가 추가되었습니다.<br>
 ※ 공지 - 2021년 7월 28일 테스트케이스가 추가되었습니다.<br>
 ※ 공지 - 2021년 8월 30일 테스트케이스가 추가되었습니다.<br>
-※ 공지 - 2022년 11월 30일 테스트케이스가 추가되었습니다.</p>
+※ 공지 - 2022년 11월 30일 테스트케이스가 추가되었습니다.<br>
+※ 공지 - 2023년 6월 12일 테스트케이스가 추가되었습니다.</p>
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
